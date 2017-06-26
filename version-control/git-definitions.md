@@ -9,7 +9,7 @@
   * Can view what was changed
   * Can rollback to any point in time
 * What is a branch and why would you use one?
-  * Branching gives you a copy of your project to work on.
+  * Branching gives you a copy of your project to work on without impacting the master until ready to merge.
   * You would use branching to protect the master and allows you the ability to only have to review code that was merged.
 * What is a commit?
   * Git Commit saves the changes made
