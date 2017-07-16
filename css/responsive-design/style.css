@@ -1,8 +1,9 @@
 body {
   position: absolute;
   left: 220px;
-  width: 756px;
+  max-width: 960px;
   border: 2px solid black;
+  padding: 2px 10px;
 
 }
 
@@ -11,8 +12,10 @@ section#external-links {
     left: 10px;
     display: inline-block;
     vertical-align: top;
-    width: 200px;
+    width: 20%;
     border: 2px solid black;
+    min-width: 10%;
+    padding: 2px 7px;
   }
 
 
