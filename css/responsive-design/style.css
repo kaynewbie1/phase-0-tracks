@@ -1,19 +1,21 @@
 body {
-  position: absolute;
-  left: 220px;
   max-width: 960px;
+}
 
 
+
+main {
+  display: inline-block;
+  width: 600px;
+  padding: 2px 5px;
 }
 
 section#external-links {
-    position: fixed;
-    left: 10px;
     display: inline-block;
     vertical-align: top;
     width: 20%;
     border: 2px solid black;
-    padding: 2px 7px;
+    padding: 2px 5px;
   }
 
 
@@ -49,36 +51,28 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
-/* @media screen and (max-width: 500px) {
+
+@media screen and (max-width: 500px) {
   body {
     background-color: hotpink;
   }
 }
-*/
-@media only screen and (max-width: 600px) {
-    /* For mobile phones: */
-    section#external-links {
-        min-width: 150px;
-    }
-}
 
-@media only screen and (min-width: 970px) {
-    /* For desktop */
-    section#external-links {
-        max-width: 195px;
-    }
-}
-
-@media (min-width: 412px) and (orientation: portrait) {
-  section#external-links {
-    display: none;
+@media screen and (max-width: 500px) {
+  main h1{
+    font-size: 20px;
   }
 }
-</style>
 
-@media (min-width: 412px) and (orientation: portrait) {
-  body {
-    max-width: 100%;
+@media screen and (max-width: 500px) {
+  #external-links h1 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 412px) {
+  section#external-links {
+    display: none;
   }
 }
 </style>
