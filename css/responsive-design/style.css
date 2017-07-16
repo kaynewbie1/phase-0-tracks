@@ -2,8 +2,7 @@ body {
   position: absolute;
   left: 220px;
   max-width: 960px;
-  border: 2px solid black;
-  padding: 2px 10px;
+
 
 }
 
@@ -14,7 +13,6 @@ section#external-links {
     vertical-align: top;
     width: 20%;
     border: 2px solid black;
-    min-width: 10%;
     padding: 2px 7px;
   }
 
@@ -51,4 +49,36 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+/* @media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+}
+*/
+@media only screen and (max-width: 600px) {
+    /* For mobile phones: */
+    section#external-links {
+        min-width: 150px;
+    }
+}
 
+@media only screen and (min-width: 970px) {
+    /* For desktop */
+    section#external-links {
+        max-width: 195px;
+    }
+}
+
+@media (min-width: 412px) and (orientation: portrait) {
+  section#external-links {
+    display: none;
+  }
+}
+</style>
+
+@media (min-width: 412px) and (orientation: portrait) {
+  body {
+    max-width: 100%;
+  }
+}
+</style>
