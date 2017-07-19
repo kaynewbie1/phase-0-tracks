@@ -1,0 +1,26 @@
+Algorithim for Using Elevator
+
+Ask guest what floor they need and remember floor number
+When elevator door closes,
+  - push the button of floor number requested
+When doors open
+  - if the correct floor number
+    - exit elevator
+  _ if not the correct floor number
+    - stay on
+
+
+
+Reminder Call To Mom To Take Daily Medication
+
+When alarm clock goes off at 5:50am CT
+  - hit snooze button and sleep for 5 additional minutes
+When clock hits 5:55am CT
+ - hit snooze button and sleep for 2 additional minutes
+ When alarm clock goes off at 5:57am CT
+  - dial mom's phone number
+    - when mom answers say "good morning, take your medicine"
+    - if mom does not anwer after three tries
+      hang up and go back to sleep
+
+
