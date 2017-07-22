@@ -13,7 +13,7 @@ def encrypt(password) #names method, declares parameter
 
     index += 1
   end
-  p new_pass #return
+  new_pass #return
 end
 
 encrypt("zed") #invoke the methods
@@ -30,7 +30,7 @@ def decrypt(password)
     new_pass += alphabet[new_index]
     index += 1
   end
-  p new_pass #return
+  new_pass #return
 end
 
 decrypt("afe")
