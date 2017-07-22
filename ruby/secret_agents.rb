@@ -37,3 +37,31 @@ decrypt("afe")
 
 decrypt(encrypt("abc"))
 # the encrypt method is called first and moves the index forward one, then the decrypt method is called on the encrypted text and moves the index back one.
+
+# Driver code
+
+#Psuedocode
+#Ask user if they want to encrypt or decrypt.
+#Create a variable for response (not encrypt or decrypt)
+#Capture response and apply appropriate method
+#Ask user for the password
+#Capture response and use selected method
+#Print results to screen
+
+puts "Do you want to encrypt or decrypt your password?"
+encoding_type = gets.chomp
+
+   if encoding_type == "encrypt"
+      puts "What is your password?"
+      password = gets.chomp
+      puts encrypt(password)
+
+    else encoding_type == "decrypt"
+      puts "What is your password?"
+      password = gets.chomp
+      puts decrypt(password)
+
+    end
+
+
+
