@@ -34,3 +34,6 @@ def decrypt(password)
 end
 
 decrypt("abc")
+
+decrypt(encrypt("abc"))
+# the encrypt method is called first and moves the index forward one, then the decrypt method is called on the encrypted text and moves the index back one.
