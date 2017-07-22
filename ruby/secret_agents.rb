@@ -3,20 +3,20 @@ def encrypt(password) #names method, declares parameter
   index = 0
   alphabet = "abcdefghijklmnopqrstuvwxyz"
   while index < password.length
-    p index_in_alpha =  alphabet.index(password[index]) #integer
+    index_in_alpha =  alphabet.index(password[index]) #integer
       if index_in_alpha == 25
         new_index = 0
       else
         new_index = index_in_alpha + 1
       end
-    p new_pass += alphabet[new_index]
+    new_pass += alphabet[new_index]
 
     index += 1
   end
-  new_pass #return
+  p new_pass #return
 end
 
-encrypt("abc") #invoke the methods
+encrypt("zed") #invoke the methods
 
 def decrypt(password)
 
@@ -26,14 +26,14 @@ def decrypt(password)
 
   while index < password.length
     index_in_alpha =  alphabet.index(password[index]) #integer
-       p new_index = index_in_alpha - 1
+       new_index = index_in_alpha - 1
     new_pass += alphabet[new_index]
     index += 1
   end
-  new_pass #return
+  p new_pass #return
 end
 
-decrypt("abc")
+decrypt("afe")
 
 decrypt(encrypt("abc"))
 # the encrypt method is called first and moves the index forward one, then the decrypt method is called on the encrypted text and moves the index back one.
