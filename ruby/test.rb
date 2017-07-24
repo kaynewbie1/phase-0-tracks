@@ -95,4 +95,6 @@ health_insurance = gets.chomp
     end
   end
   employees_to_process -= 1
+
 end
+ print "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
