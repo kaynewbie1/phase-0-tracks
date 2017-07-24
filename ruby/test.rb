@@ -45,6 +45,7 @@ health_insurance = gets.chomp
       break
     elsif allergies != "done"
     puts "If more allergies, list them. If finished listing allergies, type 'done'"
+    #puts "Please list your allergies. When list is complete, type 'done'"
     allergies = gets.chomp
     #break
     end
@@ -54,11 +55,3 @@ health_insurance = gets.chomp
 end
  print "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 #i am not sure if this is where it should go? I tried to put it before the last end and it printed, but it printed every timre the program started over.
-
-=begin
-Questions I have:
-- Wasnt sure how to verify age and/or year so I set an age range and validated against that.
-- I don't know how to check the year against the birthdate entered to verify if they match.
-- I am not sure if I honored this requirement in my code above: "Your program should base its result on the latest condition matched, not the first condition matched. In other words, it's not a "only one condition will apply" sort of scenario. This may mean repeatedly updating a variable as each condition is checked, so that the variable always contains the most precise result."
-
-=end
