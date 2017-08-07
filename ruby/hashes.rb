@@ -39,8 +39,10 @@ design[:name] = client_name
 
 puts "what is your age"
 clients_age = gets.chomp
+
 #convert string to integer for age
 design[:age] = clients_age.to_i
+
 
 puts "Do you have a pet, yes or no?"
 pet_status = gets.chomp
@@ -51,6 +53,7 @@ decor_theme = gets.chomp
 design[:decor] = decor_theme
 
 puts "How many children do you have?"
+
 #convert string to integer for number of children value
 no_children = gets.chomp.to_i
 design[:children] = no_children
@@ -76,6 +79,7 @@ if change_data != "none"
     design[change_data] = gets.chomp
     end
 #if the user types 'none' print Thank you to screen and final input details
+
 else
   puts "Thank you, here is your final list"
 end
