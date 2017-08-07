@@ -14,5 +14,25 @@ Required Program Rules
 
 
 design = {
-  name:
+  name: "Corey",
+  age: "49",
+  "no_children" => "4",
+  "decor_theme" => "modern",
+  pets: "dog"
 }
+
+puts "Fill Out Client Details"
+print "What is clients name?"
+  client_name = gets.chomp
+print "What is Age"
+  client_age = gets.chomp.to_i
+print "How many children "
+  total_children = gets.chomp.to_i
+print "What is preferred decor theme? (Modern, Retro, Country or Traditional)?"
+  client_decor_theme = gets.chomp
+print "Do you have pets"
+  client_pets = gets.chomp
+complete_status = "exit"
+client_record1 = design[client_name]
+puts "This is what you input, confirm if correct by typing 'correct': #{client_record1}"
+
