@@ -1,0 +1,32 @@
+Data Structures
+1. Why are data structures useful in programming?
+Because they allow us to store and organize large amounts of information for use. With data structures, you can organize the information we have either collected or  access the inforamtion when we need that will help to improve the performance of our programs.
+
+Arrays
+2. Define "array" and describe the characteristics of an array.
+An array stores or holds objects and is an object itself.  You create an array with [] and the objects are seperated by commas. The objects/elements that are stored in the array are indexed in order and can be retrieved when needed. it is an integer
+
+3. Give two original examples of data sets that an array might be well-suited for.
+example 1: Daily water levels of a river (watching to make sure it don't flood - since it is indexed in order, can easily retrieve to see if levels are rising)
+example 2: Weekly weight (might be good for someone tracking their weight loss or gain)
+
+Hashes
+4. Define "hash" and describe the characteristics of a hash.
+Hashes are still a collection of data but in key-value pairs. The data can be accessed for later use and can be manipulated for programs and to retrieve data within the collection. Hashes can hold any type of objects. Hashes are created with {} and can either be declared using the key => value or key: value which is symbol format. You retrieve or create new data by referring to its key.
+
+5. Give two original examples of data sets that a hash might be well-suited for.
+example 1: Visitors that have visited a patient in a hospital key = patient and value is visitor
+example 2: Marathon runners and their corresponding race numbers
+
+Iteration
+6. Why is iteration useful?
+It allows us to execute code on each element in a collection without us having to manually retrieve it and execute code for each individually. Saves time, more efficient.
+
+7. Give an example of a real-life task that would require iteration if you wrote an algorithm for it.
+Washing machine - every time someone puts clothes in the washer and add money, start the machine.
+
+Blocks
+8. What is a block?
+Chunks of code that are grouped withn braces or do..end  that are connected to methods
+
+9. What is a block parameter, and where does its value come from? I am still confused on this and would appreciate help in understanding this better. I didn't want to just put something and not understand. I want to understand this and blocks better. Any help/guidance would be appreciated. Thank you.
