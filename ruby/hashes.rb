@@ -68,7 +68,7 @@ If yes, what do you want to change: name, age, pet, decor, children? If no chang
 #store user input and convert string to symbol
 change_data = gets.chomp.to_sym
 #if user has changes and did not enter 'none'
-if change_data != "none"
+if change_data != :none
   #if changes, ask them what they want to change
   puts "what do you want to change #{change_data} to?"
   #if they input an integer for age or number of children, the convert string to integer
@@ -85,7 +85,7 @@ else
 end
 puts design
 
-#the program is not reading "none" as a string so converting to a symbol and adding as a new key called :none. How do I make it read 'none' as a string so it can end and put thank you if they type none? I tried to convert to string by using the method: "none".to_s but it didn't work. I am lost on this one. Need help.
+#the program is not reading "none" as a string so converting to a symbol and adding as a new key called :none. How do I make it read 'none' as a string so it can end and put thank you if they type none? I tried to convert to string by using the method: "none".to_s but it didn't work. I am lost on this one. Need help. (andrew answered it by explaining none needed to be a symbol since I converted the user input to symbol)
 
 #also, why and when do I use != none vs == !("none") I am confused on this also because sometime it works and other times it don't.
 
