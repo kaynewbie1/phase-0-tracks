@@ -72,3 +72,17 @@ hsh = remove_item(hsh, "Lemonade")
 hsh = remove_item(hsh, "Lemonade")
 hsh = update_quantity(hsh, "Ice cream", 1)
 print_list(hsh)
+
+
+=begin
+What did you learn about pseudocode from working on this challenge? That is important to put the steps that you are going to take to write the code. I also better understand how to write out what the "output" will be in psuedocode as I was doing it incorrectly before. Thanks Shawn.
+
+What are the tradeoffs of using arrays and hashes for this challenge?
+Not sure I understand the question, but both were useful in their own right.  I can see the benefits of both and why I would use one over the other. However, it is easier to maniuplate data in an array than in a hash, at least in my opinon. but that could also be due to my new learning and understanding of both.
+
+What does a method return? it returns an object at minimum, nil.
+What kind of things can you pass into methods as arguments?
+How can you pass information between methods?
+What concepts were solidified in this challenge, and what concepts are still confusing?
+
+=end
