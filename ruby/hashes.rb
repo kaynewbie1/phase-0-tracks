@@ -39,8 +39,8 @@ design[:name] = client_name
 
 puts "what is your age"
 clients_age = gets.chomp
+#convert string to integer for age
 design[:age] = clients_age.to_i
-
 
 puts "Do you have a pet, yes or no?"
 pet_status = gets.chomp
@@ -51,22 +51,31 @@ decor_theme = gets.chomp
 design[:decor] = decor_theme
 
 puts "How many children do you have?"
+#convert string to integer for number of children value
 no_children = gets.chomp.to_i
 design[:children] = no_children
 
+#Print out final input to show user
 puts design
-puts "Do you have changes?
-If yes, what do you want to change: name, ag, pet, decor, children? If no changes, type 'none'."
 
+#Ask user if they have changes given them what they change but also add 'none' in case they don't have changes
+puts "Do you have changes?
+If yes, what do you want to change: name, age, pet, decor, children? If no changes, type 'none'."
+
+#store user input and convert string to symbol
 change_data = gets.chomp.to_sym
+#if user has changes and did not enter 'none'
 if change_data != "none"
+  #if changes, ask them what they want to change
   puts "what do you want to change #{change_data} to?"
+  #if they input an integer for age or number of children, the convert string to integer
     if design[change_data].is_a? Integer
     design[change_data] = gets.chomp.to_i
+    #else if not an integer, keep as a string
     else
     design[change_data] = gets.chomp
     end
-
+#if the user types 'none' print Thank you to screen and final input details
 else
   puts "Thank you, here is your final list"
 end
