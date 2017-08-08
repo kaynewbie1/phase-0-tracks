@@ -68,7 +68,8 @@ If yes, what do you want to change: name, age, pet, decor, children? If no chang
 #store user input and convert string to symbol
 change_data = gets.chomp.to_sym
 #if user has changes and did not enter 'none'
-if change_data != :none
+loop do
+  if change_data != :none
   #if changes, ask them what they want to change
   puts "what do you want to change #{change_data} to?"
   #if they input an integer for age or number of children, the convert string to integer
@@ -82,6 +83,8 @@ if change_data != :none
 
 else
   puts "Thank you, here is your final list"
+break
+end
 end
 puts design
 
