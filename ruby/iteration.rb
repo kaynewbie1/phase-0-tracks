@@ -5,6 +5,7 @@ In phase-0-tracks/ruby/iteration.rb, write your own method that takes a block. Y
 def family_love
   puts "I love my entire family"
   yield("Diamond", "Noir", "Dusty", "Toby")
+  puts "That is what family is all about!"
 end
 family_love { |pet1, pet2, pet3, pet4| puts "And we also love all of our pets #{pet1} and #{pet3} and we will never forget #{pet2} and #{pet4}" }
 
