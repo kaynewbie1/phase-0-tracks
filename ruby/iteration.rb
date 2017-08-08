@@ -12,7 +12,51 @@ family_love { |pet1, pet2, pet3, pet4| puts "And we also love all of our pets #{
 
 =begin
 In phase-0-tracks/ruby/iteration.rb, declare an array and a hash, and populate each of them with some data. We don't care what data you use, but it shouldn't be nonsense data -- it should represent a reasonable scenario in which those data structures would be used. (A hash full of random letters and numbers, for instance, is not as meaningful as a hash that associates Hollywood actors with their best-known character.)
+
+
+current_patients = ["patient_1", "patient_2", "patient_3", "patient_4"]
+puts "Current Patients"
+p current_patients
+
+#iterate through the array with .each
+=begin
+current_patients.each { |patient| puts "We love: #{patients}" }
+
+
+bed_assignments = {
+  "bed_1" => 'Kanen',
+  "bed_2" => 'Ghost',
+  "bed_3" => 'Tommy',
+  "bed_4" => 'Kiesha'
+}
+p bed_assignments
+
+
+bed_assignments = {
+   bed_1: "Kanen",
+   bed_2: "Ghost",
+   bed_3: "Tommy",
+   bed_4: 1
+}
+p bed_assignments
 =end
+
+current_patients = ["patient_1", "patient_2", "patient_3", "patient_4"]
+puts "Current Patients"
+p current_patients
+
+food_assignments = {}
+current_patients.each do |patient|
+  food_assignments[patient] = "spaghetti"
+
+end
+puts
+p food_assignments
+
+
+
+
+
 
 
 
