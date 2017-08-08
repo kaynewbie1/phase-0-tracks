@@ -2,7 +2,11 @@
 In phase-0-tracks/ruby/iteration.rb, write your own method that takes a block. Your method should print out a status message before and after running the block. Your block doesn't have to do anything fancy -- it can just print out several of its own parameters.
 =end
 
-
+def family_love
+  puts "I love my entire family"
+  yield("Diamond", "Noir", "Dusty", "Toby")
+end
+family_love { |pet1, pet2, pet3, pet4| puts "And we also love all of our pets #{pet1} and #{pet3} and we will never forget #{pet2} and #{pet4}" }
 
 
 =begin
