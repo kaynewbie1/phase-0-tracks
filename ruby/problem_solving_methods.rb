@@ -12,8 +12,36 @@ p search_array(arr, 24)
 => nil
 =end
 
+# Input:integer
+# Output: fibnoacci sequence array
+# steps in between:
+# [0, 1] 0 +1 = 1
+# [0, 1, 1]
+# 1 + 1
+#[0, 1, 1, 2]
+# go through the fibonnacci sequence x times {x = the paramter/input}
+# add the numbers to the array as we go
+#return the array that is the x numbers long at the end
 
+def fib(integer)
+    #start with array of [0, 1]
+    num1 = 0
+    num2 = 1
+    fib_array = [0,1]
+    (integer - 2).times do |i|
+      #build the logic to add num1 + num2 to put the new number in the array
+      next_num = num1 + num2
+      fib_array << next_num
+      p fib_array
+      # set num1 equal to num2
+      num1 = num2
+      # set num2 to fib_array[-1]
+      num2 = fib_array[-1]
+  end
+  return fib_array
+end
 
+p fib(100)
 
 
 
