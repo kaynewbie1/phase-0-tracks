@@ -1,8 +1,8 @@
 # Array Drills
-
+=begin
 zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
                               "shotgun", "compass", "CB radio", "batteries"]
-
+=begin
 # 1. Iterate through the zombie_apocalypse_supplies array using #each,
 # printing each item in the array separated by an asterisk
 # ----
@@ -13,19 +13,79 @@ zombie_apocalypse_supplies.each {|supplies| print supplies, " * " }
 # zombie_apocalypse_supplies using #each.
 # For instance: are boots in your list of supplies?
 # ----
+def find_item (item, zombie_apocalypse_supplies) #have to add zombie_apocalypse_supplies to the argument to make it available since it was declared outside of the method
+  zombie_apocalypse_supplies.each do |item_name| #item_name is variable that will be assigned to each value zombie_apocalypse_supplies
+    if item_name == item #when item name is the same as item, which is the item I am looking for, then run code inside if statement
+      puts "The #{item} is in this list"
+    end
+  end
+end
+
+find_item("ruby", zombie_apocalypse_supplies)
 
 # 3. You can't carry too many things, you've only got room in your pack for 5.
 # Remove items in your zombie_apocalypse_supplies in any way you'd like,
 # leaving only 5, using #each.
 # ----
+p zombie_apocalypse_supplies.length
+
+#input: zombie_apocalypse_supplies - length 8
+#output: updated zombie_apocalypse_supplies - length 5
+#create empty list
+#push five items from zombie_apocalypse_supplies to a new empty array
+#set zombie_apocalypse_supplies to new array created
+# def remove_items(zombie)
+#   new_array = []
+#   zombie.pop(5)
+# end
+# p zombie_apocalypse_supplies
+# zombie_apocalypse_supplies = remove_items(zombie_apocalypse_supplies)
+# p zombie_apocalypse_supplies
+
+#go through all of them and if > 5 delete items
+def remove_items(zombie)
+  i = 0
+  new_array = []
+  zombie.each do |item|
+    if i < 5
+      p i
+      new_array << item
+    end
+    i +=1
+  end
+  return new_array
+end
+p zombie_apocalypse_supplies
+zombie_apocalypse_supplies = remove_items(zombie_apocalypse_supplies)
+p zombie_apocalypse_supplies
+=end
 
 # 4. You found another survivor! This means you can combine your supplies.
 # Create a new combined supplies list out of your zombie_apocalypse_supplies
-# and their supplies below. You should get rid of any duplicate items.
+# and their supplies below.
+#You should get rid of any duplicate items.
 # Find the built-in method that helps you accomplish this in the Ruby
 # documentation for Arrays.
+=begin
 other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
                             "solar battery", "flashlight"]
+#method signature
+#input: two arrays
+#output: an array that combines supplies list -
+
+def combine_arrays(array1, array2)
+#combine the arrays
+array1.concat(array2)
+array1
+#get rid of duplicates in new array
+array1.uniq!
+array1
+end
+
+
+p combine_arrays(zombie_apocalypse_supplies, other_survivor_supplies)
+
+=end
 # ----
 
 # Hash Drills
@@ -44,14 +104,45 @@ extinct_animals = {
 # with a dash in between the key and value, and an asterisk between each pair.
 # ----
 
+extinct_animals.each {|key, value| puts "#{key} - #{value}  *   "}
+
 # 2. Keep only animals in extinct_animals if they were extinct before
 # the year 2000, using #each.
 # ----
+#input: hash of animal and year
+#output: new hash of animal and year < than 2000
+
+def old_extinct_animals(hash)
+  new_hash = {}
+  hash.each do |animal, year|
+    if year < 2000
+      new_hash[animal] = year
+    end
+  end
+  return new_hash
+end
+
+puts old_extinct_animals(extinct_animals)
+
+
 
 # 3. Our calculations were completely off, turns out all of those animals went
 # extinct 3 years before the date provided. Update the values in extinct_animals
 # using #each, so they accurately reflect what year the animal went extinct.
 # ----
+
+#input: hash of animal and year
+def update_extinction_years(hash)
+  new_hash = {}
+  hash.each_value do |animal, year|
+    year - 3
+    new_hash[animal] = year
+    end
+  end
+
+
+puts old_extinct_animals(extinct_animals)
+
 
 # 4. You've heard that the following animals might be extinct, but you're not sure.
 # Build a method  using #each that checks if an animal is in the hash and returns true/false.
