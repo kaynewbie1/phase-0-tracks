@@ -8,15 +8,20 @@
 
 # #player_1 – Starts Game by inputting string
 #(data type: string)
-puts “Welcome to “Guess My Word”
-print "Enter a word to start game. Remember: don't let player 2 see your word"
-input = gets
-# • #Capture player_1 input and store in a variable
-# o word = input.chomp
-# puts “Here is the word you want them to guess: #{word}”
-# • Convert
-# • Determine # of guesses allowed based on the entered word length
-# o
+# puts "Welcome To Guess My Word"
+# puts "Enter a word to start game. Remember: don't let player 2 see your word"
+# #input = gets.chomp
+# # • #Capture player_1 input and store in a variable
+# word = gets.chomp
+# puts "Here is the word you want player 2 to guess: #{word}"
+
+# #Convert to array?
+# #Determine # of guesses allowed based on the entered word length
+# guess_limit = word.length
+# puts "Player 2: Are you ready to guess the word? Here is a hint, the word has #{word.length} letters. You have #{word.length} to guess the word. Good luck!"
+# puts "What is your first guess"
+
+
 
 # #Prompt 2nd user to guess word
 # • Show an underscore for each letter in the word input by player 1
@@ -80,4 +85,118 @@ input = gets
 
 
 # driver code
+
+class WordGame
+
+  def initialize
+    puts "Welcome To Guess My Word"
+     puts "*" * 30
+     @word
+     @guess = []
+     @repeated_guessed_letters = []
+     @correct_letters = []
+     @guess_input_count = 0
+     @total_guesses = 0
+     @guesses_remaining = 0
+     @letter_input
+     @allowed_guesses = 0
+     #@current_word
+     @word_length = 0
+     #@correct_letters = Array.new(@word_length.length, "_" )
+  end
+
+  def word=(word)
+    @word
+  end
+
+def input_word (word)
+  puts "Enter a word to start game. Remember: don't let player 2 see your word"
+  #input = gets.chomp
+  #Capture player_1 input and store in a variable
+  @word = gets.chomp.downcase
+  #get count of word_length
+  @word_length = @word.length
+  puts "Here is the word you want player 2 to guess: #{@word}"
+end
+
+# #limit amout of guesses to length of word input by player 1 @letter_input.length
+# def track_guesses
+#   @allowed_guesses = @word_length
+#   p allowed_guesses
+#   @total_guesses = @allowed_guesses - letter_collection.to_s.length
+#   @guesses_remaining = @word_length - @total_guesses
+#   #@guesses_remaining = @letter_input.length
+#   p track_guesses
+# end
+
+
+#track total guesses by getting length of array
+  def track_guesses
+    @total_guesses = letter_collection.length
+    #calculate allowed guesses
+    @allowed_guesses = @word_length
+    #@total_guesses = @allowed_guesses - letter_collection.to_s.length
+    @guesses_remaining = @allowed_guesses - @total_guesses
+   #@guesses_remaining = @letter_input.length
+ end
+
+def guess_word
+  puts "Player 2: Are you ready to guess the word? Here is a hint, the word has #{@word.length} letters. You have #{@word.length} tries to guess the word. Good luck!"
+  puts "Input your first letter"
+ # put letters input into an array
+  letter_collection = []
+  @letter_input = gets.chomp.chars
+  letter_collection << @letter_input
+  p letter_collection #test to confirm array is building
+    #do I need to put @total_guesses = 0 here again for the while loop even though I have it in initialize?
+    @total_guesses = 0
+    while @total_guesses <= @allowed_guesses #|| @word
+      @total_guesses = letter_collection.length
+      @allowed_guesses = @word_length
+      @guesses_remaining = @allowed_guesses - @total_guesses
+      #<= @guesses_remaining
+      puts "You have #{@guesses_remaining} guesses left."
+      puts "What is your next letter?"
+      #puts "Word: #{@correct_letters.join(" ")}"
+      @letter_input = gets.chomp.chars
+      # guess_limit = word.length
+      letter_collection << @letter_input
+      p letter_collection #test to confirm array is building
+
+        @total_guesses +=1 #gets total_guess count each loop to avoid infinite loop
+        if @guesses_remaining == 0 #&& @word.split('') == letter_collection
+          puts "You have no more guesses. The word was #{@word}."
+          #else letter_collection.join("") == @word
+          #   puts "CONGRATULATIONS! You guessed the mystery word: #{@word} in #{@total_guesses} guesses!"
+        elsif @word.split(//) == letter_collection
+          puts "CONGRATULATIONS! You guessed the mystery word: #{@word} in #{@total_guesses} guesses!"
+
+        elsif letter_collection.include?(@letter_input)
+          puts "#{@letter_input} is in the word. Guess more letters"
+      end
+    end
+  end
+#Repeated guesses do not count against the user.
+def repeat_letter_checker
+  if
+    letter_collection.include?(@letter_input)
+    @guesses_remaining = !(@allowed_guesses - @total_guesses)
+#if letter input is in the letter collection arrary, then do not subtract from guesses remaining. figured I would use the ! bang operator..not sure if I can do this.
+end
+end
+
+end
+
+
+
+=begin
+The guessing player receives continual feedback on the current state of the word. So if the secret word is "unicorn", the user will start out seeing something like "_ _ _ _ _ _ _", which would become "_ _ _ c _ _ _" after the user enters a guess of "c".
+=end
+#I can't figure out how to show dashed lines
+#can't figure out how to put the letters in the right place, assume covert the letter_input to an index and then replece it with the converted index of the dash in the  letter_collection..not sure
+
+test = WordGame.new
+test.input_word("jackson")
+test.guess_word
+
 
