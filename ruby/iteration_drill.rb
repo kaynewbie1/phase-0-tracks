@@ -134,18 +134,28 @@ puts old_extinct_animals(extinct_animals)
 #input: hash of animal and year
 def update_extinction_years(hash)
   new_hash = {}
-  hash.each_value do |animal, year|
-    year - 3
-    new_hash[animal] = year
-    end
+  hash.each do |animal, year|
+    #year = year - 3
+    new_hash[animal] = year - 3
   end
+  return new_hash
+end
 
 
-puts old_extinct_animals(extinct_animals)
+puts update_extinction_years(extinct_animals)
 
 
 # 4. You've heard that the following animals might be extinct, but you're not sure.
 # Build a method  using #each that checks if an animal is in the hash and returns true/false.
+
+def oonfirm_extinction(hash, animal_name)
+  hash.each do |animal, year|
+    if hash.has_key?(animal_name)
+      return true
+    end
+  end
+end
+
 # Call the method in your driver code with each of the following animals to check if
 # they are extinct or not:
 # "Andean Cat"
@@ -153,6 +163,7 @@ puts old_extinct_animals(extinct_animals)
 # "Saiga Antelope"
 # Driver code example: is_extinct?(extinct_animals, "Andean Cat")
 # ----
+p oonfirm_extinction(extinct_animals, "Andean Cat")
 
 # 5. We just found out that the Passenger Pigeon is actually not extinct!
 # Remove them from extinct_animals and return the key value pair as a two item array.
