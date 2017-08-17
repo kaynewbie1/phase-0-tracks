@@ -77,4 +77,8 @@ console.log(x)
 //
 
 
+for (i=0; i == 10; i++) {
+  i
+}
+
 // Are there advantages to using constructor functions to create objects? Disadvantages?
