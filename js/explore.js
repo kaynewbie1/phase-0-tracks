@@ -14,11 +14,18 @@
   //declare a string
     var str = "Loop over me!";
   //convert the string into an array that seperates the actual words in the string
-    var res = str.split(" ");
+    var newStr = str.split(" ");
   //use the array reverse method to reverse the words in the array
-    res.reverse ();
+    newStr.reverse ();
+  //Print to console to view new array
+    console.log( newStr );
   //Convert reversed array back into a string
-    res.toString();
+    newStr.toString();
+  //remove commas in string and assign result back to variable
+    console.log( newStr );
+    var updated_str = newStr.toString("");
+    updated_str = updated_str.replace(/,/g, ' ');
+    console.log(updated_str);
 
 
 // Add driver code that calls the function in order to reverse a string of your choice (as long as it's not a palindrome!), and stores the result of the function in a variable.
