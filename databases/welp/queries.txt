@@ -1,0 +1,41 @@
+You've joined two tables before. How do you join three?
+sqlite> Select * FROM
+   ...> reviews
+   ...> INNER JOIN users ON users.id = reviews.user_id
+   ...> INNER JOIN businesses ON businesses.id = reviews.business_id;
+
+      1|5|Best pedicure ever!|1|1|1|Corey|Walden|1|Therapie Spa
+      2|1|I am going back to eating meat after this experience!|2|2|2|Neil|Barnett|2|Soul Vegetarian
+      3|4|Pleasant surprise to find men clothing here|3|4|4|Maurice|Jelks|3|Kay's Things Consignment
+
+
+There are some repetitive columns if we choose to view all fields. Choose instead to just view the user's names, the business name, the star rating, and the comment.
+
+sqlite> Select
+   ...> businesses.name as Business,
+   ...> reviews.stars as Rating,
+   ...> reviews.comment as Rating_Comment,
+   ...> users.first_name as Reviewer
+   ...> FROM
+   ...> reviews
+   ...> INNER JOIN users ON users.id = reviews.user_id
+   ...> INNER JOIN businesses ON businesses.id = reviews.business_id;
+
+    Therapie Spa|5|Best pedicure ever!|Corey
+    Soul Vegetarian|1|I am going back to eating meat after this experience!|Neil
+    Kay's Things Consignment|4|Pleasant surprise to find men clothing here|Maurice
+
+
+How do you view the data of all three tables for just one particular business?
+sqlite> Select
+   ...> businesses.name as Business,
+   ...> reviews.stars as Rating,
+   ...> reviews.comment as Rating_Comment,
+   ...> users.first_name as Reviewer
+   ...> FROM
+   ...> reviews
+   ...> INNER JOIN users ON users.id = reviews.user_id
+   ...> INNER JOIN businesses ON businesses.id = reviews.business_id
+   ...> WHERE
+   ...> businesses.id = 1;
+  Therapie Spa|5|Best pedicure ever!|Corey
