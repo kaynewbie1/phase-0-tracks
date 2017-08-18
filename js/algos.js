@@ -61,15 +61,19 @@ for (var key in object)
 
 
 // create a randomWord function that takes integer as a parameter
-function randomWord (integer)
+function randomWord (integer) {
 // create var to represent alphabet
-var alphabet = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
-// create var that is a string ""
-var string = ""
+
+
 // iterate int number of times
-
+ for (i=0, i<integer, i++) {
+  var string = ""; // create var that is a string "" to capture everytime we do an iteration
+ }
 // generate random number from 0-25
 // pull letter at that index out of the alphabet
 // append to string ""
 // return original string ""
+
+}
