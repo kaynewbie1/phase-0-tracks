@@ -1,0 +1,77 @@
+Run a SQL query for each of the following:
+
+Display the information in one table (either table is fine).
+  sqlite> SELECT * FROM clients;
+  1|Jessica Baller|Essential Manicure|false|1
+  2|Bessie Holtr|Signature Pedicuree|true|21
+  3|Tka Echols|No Chip Manicure|false|2
+  4|Angela Bridges|No Chip Pedicure|false|1
+
+Update an item that meets some condition (you can choose a condition that makes sense).
+  sqlite> UPDATE clients SET name="Bessie Holt" WHERE name="Bessie Holtr";
+
+  sqlite> UPDATE clients SET service="Signature Pedicure" WHERE name="Angela Bridges";
+
+  sqlite> UPDATE clients SET tech_id="2" WHERE name="Bessie Holt";
+
+Display the information in both tables using one query.
+  sqlite> SELECT * FROM clients, technicians WHERE clients.tech_id = technicians.id;
+  1|Jessica Baller|Essential Manicure|false|1|1|Kay Claws
+  2|Bessie Holt|Signature Pedicuree|true|2|2|Brenda Polish
+  3|Tka Echols|No Chip Manicure|false|2|2|Brenda Polish
+  4|Angela Bridges|Signature Pedicure|false|1|1|Kay Claws
+
+Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+  sqlite> SELECT clients.name, technicians.name FROM clients JOIN technicians ON clients.tech_id = technicians.id;
+  Jessica Baller|Kay Claws
+  Bessie Holt|Brenda Polish
+  Tka Echols|Brenda Polish
+  Angela Bridges|Kay Claws
+
+Delete an item that meets some condition (you can choose a condition that makes sense).
+  sqlite> DELETE FROM technicians WHERE name = "Cindy Cuticles";
+  sqlite> SELECT * FROM technicians;
+  1|Kay Claws
+  2|Brenda Polish
+  sqlite>
+
+
+There are lots of different kinds of joins. What are they?
+  SQL defines three major types of joins −
+  1. The CROSS JOIN - matches every row of the first table with every row of the second table. CROSS JOIN have the potential to generate extremely large tables, so only use them when appropriate.
+
+  2. The INNER JOIN - Most common and default type of join.
+
+  3. The OUTER JOIN is an extension of INNER JOIN. Though SQL standard defines three types of OUTER JOINs: LEFT, RIGHT, and FULL, SQLite only supports the LEFT OUTER JOIN.
+
+Can you apply different conditions to a join to change what's displayed? Can you bookmark any good diagrams that will help you tell different joins apart in the future?
+
+
+Try a few different joins in your database, and record the commands and the output in
+    sqlite> Select TECH_ID, SERVICE FROM CLIENTS CROSS JOIN TECHNICIANS;
+    1|Essential Manicure
+    1|Essential Manicure
+    2|Signature Pedicuree
+    2|Signature Pedicuree
+    2|No Chip Manicure
+    2|No Chip Manicure
+    1|Signature Pedicure
+    1|Signature Pedicure
+
+    sqlite> SELECT TECH_ID, SERVICE FROM CLIENTS INNER JOIN TECHNICIANS ON CLIENTS.ID = TECHNICIANS.ID;
+    1|Essential Manicure
+    2|Signature Pedicuree
+
+
+(NOTE: I TRIED TO USE NAME, BUT IT WAS COMING BACK WITH THE ERRORS AND I DON'T KNOW WHY. SO I TOOK OUT NAME )
+
+    sqlite> SELECT tech_id, name, service FROM clients INNER JOIN technicians ON clients.id = technicians.id;
+    Error: ambiguous column name: name
+    sqlite> SELECT id, name, service FROM clients INNER JOIN technicians ON clients.id = technicians.id;
+    Error: ambiguous column name: id
+    sqlite> SELECT tech_id, name, service FROM clients INNER JOIN technicians ON client.id = technicians.id;
+    Error: ambiguous column name: name
+    sqlite> SELECT tech_id, clients.name, service FROM clients INNER JOIN technicians ON client.id = technicians.id;
+    Error: no such column: client.id
+    sqlite> Select TECH_ID, SERVICE FROM CLIENT CROSS JOIN TECHNICIANS;
+    Error: no such table: CLIENT
