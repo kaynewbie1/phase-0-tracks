@@ -1,0 +1,36 @@
+Run a SQL query for each of the following:
+
+Display the information in one table (either table is fine).
+  sqlite> SELECT * FROM clients;
+  1|Jessica Baller|Essential Manicure|false|1
+  2|Bessie Holtr|Signature Pedicuree|true|21
+  3|Tka Echols|No Chip Manicure|false|2
+  4|Angela Bridges|No Chip Pedicure|false|1
+
+Update an item that meets some condition (you can choose a condition that makes sense).
+  sqlite> UPDATE clients SET name="Bessie Holt" WHERE name="Bessie Holtr";
+
+  sqlite> UPDATE clients SET service="Signature Pedicure" WHERE name="Angela Bridges";
+
+  sqlite> UPDATE clients SET tech_id="2" WHERE name="Bessie Holt";
+
+Display the information in both tables using one query.
+  sqlite> SELECT * FROM clients, technicians WHERE clients.tech_id = technicians.id;
+  1|Jessica Baller|Essential Manicure|false|1|1|Kay Claws
+  2|Bessie Holt|Signature Pedicuree|true|2|2|Brenda Polish
+  3|Tka Echols|No Chip Manicure|false|2|2|Brenda Polish
+  4|Angela Bridges|Signature Pedicure|false|1|1|Kay Claws
+
+Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+  sqlite> SELECT clients.name, technicians.name FROM clients JOIN technicians ON clients.tech_id = technicians.id;
+  Jessica Baller|Kay Claws
+  Bessie Holt|Brenda Polish
+  Tka Echols|Brenda Polish
+  Angela Bridges|Kay Claws
+
+Delete an item that meets some condition (you can choose a condition that makes sense).
+  sqlite> DELETE FROM technicians WHERE name = "Cindy Cuticles";
+  sqlite> SELECT * FROM technicians;
+  1|Kay Claws
+  2|Brenda Polish
+  sqlite>
