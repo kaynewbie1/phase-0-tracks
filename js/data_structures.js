@@ -37,4 +37,48 @@ for (var i=0; i < color.length; i++)
   }
 console.log (horses);
 
+// Horses are great, but times are a-changin', and we need to add an option for faster transportation that we can create with an assembly line. At the bottom of your data_structures.js file,
+    // write a constructor function for a car.
 
+  // Give it a few different properties of various data types, including at least one function.
+   //Demonstrate that your function works by creating a few cars with it.
+
+   //this is giving the context of this function and refers to the context of the instance of Car which is a constructor function
+function Car(name, color, isFast) {
+  console.log("This is my car:");
+  this.name = name;
+  this.color = color;
+  this.isFast = true;
+  this.isExpensive = function() { console.log ("Yes, It's Expensive!") };
+  console.log("Car Initilization Complete");
+}
+
+console.log("Build A New Dog");
+var newCar = new Car("CandyApple", "red", false);
+console.log(typeof newCar)
+newCar.isExpensive();
+console.log("*************")
+
+// If you wanted to loop through the keys and values of an object, how would you do that? (There are a few ways to accomplish this, and some gotchas that can happen depending on your approach.)
+
+var inventory = {firstName:"Corey", age:40, lastName:"Walden"};
+
+var text = "";
+var x;
+for (x in inventory) {
+  //console.log(x)
+  console.log(text)
+    text += inventory[x];
+}
+
+console.log(text)
+console.log(x)
+
+//
+
+
+for (i=0; i == 10; i++) {
+  i
+}
+
+// Are there advantages to using constructor functions to create objects? Disadvantages?
