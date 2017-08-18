@@ -13,17 +13,17 @@
 
   //declare a string
     var str = "Loop over me!";
-  //convert the string into an array that seperates the actual words in the string
-    var newStr = str.split(" ");
-  //use the array reverse method to reverse the words in the array
-    newStr.reverse ();
+    console.log( "This is the original string: " + str);
+  //convert the string into an array that seperates the actual words in the string and use the array reverse method to reverse the words in the array
+    var newArray = str.split(" ").reverse();
+  //
   //Print to console to view new array
-    console.log( newStr );
+    console.log( "This is the new reversed string: " + newArray);
   //Convert reversed array back into a string
-    newStr.toString();
+   var updated_str = newArray.join(" ");
   //remove commas in string and assign result back to variable
-    console.log( newStr );
-    var updated_str = newStr.toString("");
+    console.log( newArray );
+    var updated_str = newArray.toString("");
     updated_str = updated_str.replace(/,/g, ' ');
     console.log(updated_str);
 
