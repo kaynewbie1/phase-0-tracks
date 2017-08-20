@@ -13,7 +13,8 @@
     - STATE_DATA is a Ruby Constant that is used to store a value while the program is being executed. this means the value can't be changed. Because where the require statement is it has a global scope and can be accessed by any part of the program.
 =end
 
-
+#nested hashes
+#you use a symbol in a hash to define same key but has different values, can't have spaces in symbols, must use underscores
 STATE_DATA = {
   "Alabama" => {population_density: 94.65, population: 4822023},
   "Alaska" => {population_density: 1.1111, population: 731449},
