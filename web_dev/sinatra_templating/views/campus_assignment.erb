@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Campus Assignment</title>
+</head>
+<body>
+  <h1>Student Campus Assignment</h1>
+  <p>Here is a list of campus assignments for every student</p>
+  <ul>
+    <% @students.each do |student| %>
+      <li><%= student['name'] %> is going to <%= student['campus'] %></li>
+    <% end %>
+  </ul>
+</body>
+</html>
